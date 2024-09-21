@@ -1,0 +1,175 @@
+﻿<Page
+    x:Class="ServiceCalculator_2._0.Delivery"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ServiceCalculator_2._0"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox 
+            x:Name="KmCountText" 
+            Grid.Column="0" Grid.Row="0"
+            PlaceholderText="Расстояние в км"
+            HorizontalAlignment="Left"             
+            TextWrapping="Wrap" 
+            VerticalAlignment="Center" 
+            Height="40" Width="220" TextChanged="KmCountText_TextChanged" 
+            Margin="10"/>
+        <TextBox 
+            x:Name="WeightText" 
+            Grid.Column="0" Grid.Row="1"
+            PlaceholderText="Вес в кг"
+            HorizontalAlignment="Left"              
+            TextWrapping="Wrap"  
+            VerticalAlignment="Center" 
+            Height="40" Width="220" 
+            TextChanged="WeightText_TextChanged"
+            Margin="10"/>
+        <ComboBox 
+            x:Name="ProductTypeComboBox"
+            Grid.Column="0" Grid.Row="2"
+            Width="220" Height="40" 
+            SelectionChanged="ProductTypeComboBox_SelectionChanged" 
+            Margin="10" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ToggleSwitch 
+                x:Name="NeedAscent"             
+                Grid.Column="0"
+                Header=" Подъем" 
+                Width="100" Height="60" 
+                Toggled="NeedAscent_Toggled" 
+                
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"/>
+            <ToggleSwitch 
+                x:Name="ElevatorCheckBox" 
+                Grid.Column="1"
+                Header=" Лифт"  
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"               
+                Width="100" Height="60" 
+                Toggled="ElevatorCheckBox_Toggled"/>
+        </Grid>
+        
+        <TextBox 
+            x:Name="FloorNumberText" 
+            Grid.Column="0" Grid.Row="4"
+            PlaceholderText="Этаж" 
+            TextWrapping="Wrap"   
+            Height="40" Width="220" 
+            TextChanged="FloorNumberText_TextChanged" 
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+        <RichTextBlock 
+            HorizontalAlignment="Left"
+            Grid.Column="1" Grid.Row="0"
+            Height="Auto" 
+            Margin="10" 
+            VerticalAlignment="Center">
+            <Paragraph>
+                <Run FontSize="10" Text="Доставка осуществляется на следующий день после покупки. С покупателем свяжется сотрудник доставки и согласует время, а также уточнит адрес."/>
+            </Paragraph>
+        </RichTextBlock>
+        <RichTextBlock 
+            HorizontalAlignment="Left"
+            Grid.Column="1" Grid.Row="1"
+            Height="Auto" 
+            Margin="10" 
+            VerticalAlignment="Center">
+            <Paragraph>
+                <Run FontSize="10" Text="Доставка должна быть оформлена не позднее 18:00. В крайних случаях, можно после 18:00 по согласованию с оператором службы доставки."/>
+            </Paragraph>
+        </RichTextBlock>
+        <RichTextBlock 
+            HorizontalAlignment="Left"
+            Grid.Column="1" Grid.Row="2"
+            Height="Auto" 
+            Margin="10" 
+            VerticalAlignment="Center">
+            <Paragraph>
+                <Run FontSize="10" Text="Если итоговая стоимость составляет более 1 000 000 руб, необходимо посчитать вручную"/>
+            </Paragraph>
+        </RichTextBlock>
+        <RichTextBlock 
+            HorizontalAlignment="Left"
+            Grid.Column="1" Grid.Row="3"
+            Height="Auto" 
+            Margin="10" 
+            VerticalAlignment="Center">
+            <Paragraph>
+                <Run FontSize="10" Text="Мелкогабаритный товар: вес не более 20 кг, длина упаковки - не более 180 см"/>
+            </Paragraph>
+        </RichTextBlock>
+        <TextBlock 
+            Grid.Column="1" Grid.Row="4"
+            TextWrapping="Wrap" 
+            Text="Доставка" 
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" 
+            Height="50" Width="200"/>
+        <TextBlock 
+            Grid.Column="1" Grid.Row="5"
+            TextWrapping="Wrap" 
+            Text="Подъем" 
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Height="40" Width="120"/>
+        <TextBox 
+            x:Name="ResultText" 
+            PlaceholderText="Не все правильно заполнено"
+            Grid.Column="1" Grid.Row="4"
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap" 
+            Height="40" Width="200"
+            IsReadOnly="True"/>
+        <TextBox 
+            x:Name="ResultTextAscent" 
+            PlaceholderText="Не все правильно заполнено"
+            Grid.Column="1" Grid.Row="5"
+            TextWrapping="Wrap" 
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Height="40" Width="200"
+            IsReadOnly="True"/>
+        <TextBlock 
+            x:Name="AlertText" 
+            Grid.Column="0" Grid.Row="5"
+            TextWrapping="Wrap" 
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="" 
+            Width="Auto" 
+            Foreground="Red"/>
+    </Grid>
+</Page>

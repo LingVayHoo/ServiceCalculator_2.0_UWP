@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="ServiceCalculator_2._0.Assembly"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ServiceCalculator_2._0"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox 
+            x:Name="GoodsCostText" 
+            Grid.Column="0" Grid.Row="0"
+            PlaceholderText="Стоимость собираемых товаров" 
+            HorizontalAlignment="Left" 
+            Margin="10" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top" 
+            Height="40" Width="250" 
+            TextChanged="GoodsCostText_TextChanged"/>
+        <TextBox 
+            x:Name="DistanceText_Assembly" 
+            Grid.Column="0" Grid.Row="1"
+            PlaceholderText="Удаленность, км" 
+            HorizontalAlignment="Left" 
+            Margin="10" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top" 
+            Height="40" Width="250" 
+            TextChanged="DistanceText_Assembly_TextChanged"/>
+        <TextBox 
+            x:Name="ResultText_Assembly" 
+            Grid.Column="1" Grid.Row="2"
+            PlaceholderText="Не все верно заполнено" 
+            HorizontalAlignment="Right" 
+            Margin="10" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top"
+            Width="200" Height="40"/>
+        <TextBlock 
+            Grid.Column="0" Grid.Row="2"
+            HorizontalAlignment="Left" 
+            Margin="10" 
+            TextWrapping="Wrap" 
+            Text="Стоимость сборки" 
+            VerticalAlignment="Top" 
+            Width="Auto" Height="Auto" 
+            TextAlignment="Left"/>
+        <TextBlock 
+            Grid.Column="1" Grid.Row="1" 
+            HorizontalAlignment="Left" 
+            Margin="10,10,0,0" 
+            TextWrapping="Wrap" 
+            Height="Auto"
+            Text="Корпусная мебель - 14 % от стоимости собираемых товаров. Если адрес находится не в пределах КАД, то добавляется плата за расстояние от КАД до адреса. Минимальная стоимость 4000 руб" 
+            VerticalAlignment="Top"/>
+        <TextBlock 
+            x:Name="AlertText" 
+            Grid.Column="0" Grid.Row="3"
+            HorizontalAlignment="Left" 
+            Margin="10" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="Auto"/>
+
+    </Grid>
+</Page>

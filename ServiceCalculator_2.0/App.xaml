@@ -1,0 +1,59 @@
+﻿<Application
+    x:Class="ServiceCalculator_2._0.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ServiceCalculator_2._0">
+
+    <Application.Resources>
+        <!-- Общий стиль для TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <!-- Общий стиль для TextBlock -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <!-- Общий стиль для RichTextBlock -->
+        <Style TargetType="RichTextBlock">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <!-- Общий стиль для ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <!-- Общий стиль для ToggleSwitch -->
+        <Style TargetType="ToggleSwitch">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF007ACC"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="OffContent" Value="Off"/>
+            <Setter Property="OnContent" Value="On"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+
+    </Application.Resources>
+
+</Application>
