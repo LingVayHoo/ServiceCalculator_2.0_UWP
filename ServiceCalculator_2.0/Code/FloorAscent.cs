@@ -88,7 +88,7 @@ namespace WpfApp2
                 //Устанавливаем цену за 500 кг
                 result = FloorAscentPricesNoElevator[5];
                 // Рассчитываем стоимость за вес, который свыше 500 кг.
-                float underWeightLimit = FloorAscentPricesNoElevator[6] *
+                float underWeightLimit = FloorAscentPricesNoElevator[7] *
                     (float)Math.Ceiling((weight - WeightLimits[5]) / 100);
                 return (result + underWeightLimit) * floorNumber;
             }

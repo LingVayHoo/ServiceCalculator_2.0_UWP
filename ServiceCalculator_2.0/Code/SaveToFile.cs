@@ -22,6 +22,14 @@ namespace ServiceCalculator_2._0.Code
             {
                 await Save(CreateDataSettings());
             }
+            if (await IsFileExistsAsync(_fileName))
+            {
+                DataSettings s = await Read();
+                if (s != null && s.AppVersion < 2.1f)
+                {
+                    await Save(CreateDataSettings());
+                }
+            }
         }
 
         public async Task Save(DataSettings data)
@@ -68,22 +76,23 @@ namespace ServiceCalculator_2._0.Code
         {
             DataSettings data = new DataSettings
             {
-                SmalBasePrice = 450f,
-                LargeBasePrice = 990f,
-                IsSmallType = true,
-                OneKmPrice = 35f,
-                MarginPercent = 1.12f,
-                MaxWeight = 350f,
-                SmallDefaultPrices = new float[] { 700, 900, 1300, 1700 },
-                LargeDefaultPrices = new float[] { 1300, 1450, 1850, 2250 },
+                SmalBasePrice = 475f,
+                LargeBasePrice = 1040f,
+                IsSmallType = false,
+                OneKmPrice = 53f,
+                MarginPercent = 1.15f,
+                MaxWeight = 3500f,
+                SmallDefaultPrices = new float[] { 850, 1150, 1800, 2200 },
+                LargeDefaultPrices = new float[] { 1500, 1800, 2250, 3000 },
                 KmLimits = new float[] { 5, 10, 20, 30 },
                 WeightLimits = new float[] { 25, 50, 100, 150, 300, 500, 10000 },
-                FloorAscentPrices = new float[] { 150, 300, 450, 600, 1200, 1800, 3000 },
-                FloorAscentPricesNoElevator = new float[] { 75, 150, 300, 450, 600, 750, 150, 250 },
-                AssemblyPercent = 0.12f,
+                FloorAscentPrices = new float[] { 240, 365, 550, 725, 1450, 2175, 3625 },
+                FloorAscentPricesNoElevator = new float[] { 120, 185, 360, 550, 725, 910, 185 },
+                AssemblyPercent = 0.10f,
                 AssemblyKitchenPercent = 0.16f,
                 AssemblyMinPrice = 4000f,
-                AssemblyKmPrice = 50
+                AssemblyKmPrice = 50,
+                AppVersion = 2.2f
             };
 
             return data;

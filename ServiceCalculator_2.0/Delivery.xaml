@@ -22,34 +22,29 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBox 
-            x:Name="KmCountText" 
-            Grid.Column="0" Grid.Row="0"
+            x:Name="KmCountText"
             PlaceholderText="Расстояние в км"
-            HorizontalAlignment="Left"             
+            HorizontalAlignment="Center"             
             TextWrapping="Wrap" 
             VerticalAlignment="Center" 
-            Height="40" Width="220" TextChanged="KmCountText_TextChanged" 
-            Margin="10"/>
+            Height="40" Width="220" TextChanged="KmCountText_TextChanged"/>
         <TextBox 
-            x:Name="WeightText" 
-            Grid.Column="0" Grid.Row="1"
+            x:Name="WeightText" Grid.Row="1"
             PlaceholderText="Вес в кг"
-            HorizontalAlignment="Left"              
+            HorizontalAlignment="Center"              
             TextWrapping="Wrap"  
             VerticalAlignment="Center" 
             Height="40" Width="220" 
-            TextChanged="WeightText_TextChanged"
-            Margin="10"/>
+            TextChanged="WeightText_TextChanged"/>
         <ComboBox 
-            x:Name="ProductTypeComboBox"
-            Grid.Column="0" Grid.Row="2"
+            x:Name="ProductTypeComboBox" Grid.Row="2"
             Width="220" Height="40" 
             SelectionChanged="ProductTypeComboBox_SelectionChanged" 
-            Margin="10" 
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -74,22 +69,28 @@
                 Width="100" Height="60" 
                 Toggled="ElevatorCheckBox_Toggled"/>
         </Grid>
-        
+
         <TextBox 
-            x:Name="FloorNumberText" 
-            Grid.Column="0" Grid.Row="4"
+            x:Name="FloorNumberText" Grid.Row="4"
             PlaceholderText="Этаж" 
             TextWrapping="Wrap"   
             Height="40" Width="220" 
-            TextChanged="FloorNumberText_TextChanged" 
-            Margin="10"
-            HorizontalAlignment="Left"
+            TextChanged="FloorNumberText_TextChanged"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+        <TextBox 
+            x:Name="RemoteText" Grid.Row="5"
+            PlaceholderText="Пронос в м" 
+            TextWrapping="Wrap"   
+            Height="40" Width="220" 
+            TextChanged="RemoteText_TextChanged"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center" />
         <RichTextBlock 
             HorizontalAlignment="Left"
-            Grid.Column="1" Grid.Row="0"
+            Grid.Column="1"
             Height="Auto" 
-            Margin="10" 
+            Margin="10,0,0,0" 
             VerticalAlignment="Center">
             <Paragraph>
                 <Run FontSize="10" Text="Доставка осуществляется на следующий день после покупки. С покупателем свяжется сотрудник доставки и согласует время, а также уточнит адрес."/>
@@ -99,7 +100,7 @@
             HorizontalAlignment="Left"
             Grid.Column="1" Grid.Row="1"
             Height="Auto" 
-            Margin="10" 
+            Margin="10,0,0,0" 
             VerticalAlignment="Center">
             <Paragraph>
                 <Run FontSize="10" Text="Доставка должна быть оформлена не позднее 18:00. В крайних случаях, можно после 18:00 по согласованию с оператором службы доставки."/>
@@ -109,7 +110,7 @@
             HorizontalAlignment="Left"
             Grid.Column="1" Grid.Row="2"
             Height="Auto" 
-            Margin="10" 
+            Margin="10,0,0,0" 
             VerticalAlignment="Center">
             <Paragraph>
                 <Run FontSize="10" Text="Если итоговая стоимость составляет более 1 000 000 руб, необходимо посчитать вручную"/>
@@ -119,33 +120,42 @@
             HorizontalAlignment="Left"
             Grid.Column="1" Grid.Row="3"
             Height="Auto" 
-            Margin="10" 
+            Margin="10,0,0,0" 
             VerticalAlignment="Center">
             <Paragraph>
                 <Run FontSize="10" Text="Мелкогабаритный товар: вес не более 20 кг, длина упаковки - не более 180 см"/>
             </Paragraph>
         </RichTextBlock>
-        <TextBlock 
+        <RichTextBlock 
+            HorizontalAlignment="Left"
             Grid.Column="1" Grid.Row="4"
+            Height="Auto" 
+            Margin="10,0,0,0" 
+            VerticalAlignment="Center">
+            <Paragraph>
+                <Run FontSize="10" Text="Пронос: первые 50 м бесплатно. Далее, каждые 50 м по тарифу подъема без лифта"/>
+            </Paragraph>
+        </RichTextBlock>
+        <TextBlock 
+            Grid.Column="1" Grid.Row="5"
             TextWrapping="Wrap" 
             Text="Доставка" 
-            Margin="10"
+            Margin="10,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center" 
             Height="50" Width="200"/>
         <TextBlock 
-            Grid.Column="1" Grid.Row="5"
+            Grid.Column="1" Grid.Row="6"
             TextWrapping="Wrap" 
             Text="Подъем" 
-            Margin="10"
+            Margin="10,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Height="40" Width="120"/>
         <TextBox 
             x:Name="ResultText" 
             PlaceholderText="Не все правильно заполнено"
-            Grid.Column="1" Grid.Row="4"
-            Margin="10"
+            Grid.Column="1" Grid.Row="5"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             TextWrapping="Wrap" 
@@ -154,9 +164,8 @@
         <TextBox 
             x:Name="ResultTextAscent" 
             PlaceholderText="Не все правильно заполнено"
-            Grid.Column="1" Grid.Row="5"
-            TextWrapping="Wrap" 
-            Margin="10"
+            Grid.Column="1" Grid.Row="6"
+            TextWrapping="Wrap"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Height="40" Width="200"
@@ -165,7 +174,7 @@
             x:Name="AlertText" 
             Grid.Column="0" Grid.Row="5"
             TextWrapping="Wrap" 
-            Margin="10"
+            Margin="10,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Text="" 

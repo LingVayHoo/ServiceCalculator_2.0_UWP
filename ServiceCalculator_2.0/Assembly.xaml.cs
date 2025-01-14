@@ -68,9 +68,10 @@ namespace ServiceCalculator_2._0
 
             bool isKitchenChecked = false;
 
-            double result = Math.Floor(assemblyCalculator.Calculate(isKitchenChecked, goodsCost, distance));
+            (float, float) result = assemblyCalculator.Calculate(isKitchenChecked, goodsCost, distance);
 
-            ResultText_Assembly.Text = result.ToString();
+            ResultText_Assembly.Text = Math.Floor(result.Item1).ToString();
+            ResultText_Remote.Text = Math.Floor(result.Item2).ToString();
         }
 
         private void Warning(string message)

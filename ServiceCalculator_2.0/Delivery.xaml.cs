@@ -78,7 +78,15 @@ namespace ServiceCalculator_2._0
                         Warning("Не удалось посчитать подъем из-за размеров коробок! Нужен подсчет вручную!");
                 }
 
-                ResultText.Text = res.ToString();
+                if (float.TryParse(RemoteText.Text, out float remoteInM))
+                {
+                    if (float.TryParse(WeightText.Text, out float weight) || weight > 0)
+                    {
+                        res += deliveryCalculator.GetRemotePrice(weight, remoteInM);
+                    }                    
+                }
+
+                ResultText.Text = Math.Floor(res).ToString();
             }
         }
 
@@ -190,6 +198,11 @@ namespace ServiceCalculator_2._0
         }
 
         private void FloorNumberText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CalculateDelivery();
+        }
+
+        private void RemoteText_TextChanged(object sender, TextChangedEventArgs e)
         {
             CalculateDelivery();
         }

@@ -15,19 +15,21 @@ namespace ServiceCalculator
             Settings = settings;
         }
 
-        public float Calculate(bool isKitchen, float goodsCost, float km)
+        public (float, float) Calculate(bool isKitchen, float goodsCost, float km)
         {
-            if (Settings == null) return -1f;
+            if (Settings == null) return (-1f, -1f);
             float percent = 0;
             if (isKitchen) percent = Settings.AssemblyKitchenPercent;
             else percent = Settings.AssemblyPercent;
 
-            float result = goodsCost * percent + km * Settings.AssemblyKmPrice;
-            result *= Settings.MarginPercent;
+            float assemblyResult = goodsCost * percent;
+            float remoteResult = km * Settings.AssemblyKmPrice;
+            assemblyResult *= Settings.MarginPercent;
+            remoteResult *= Settings.MarginPercent;
             // Проверка на минимальную стоимость
-            if (result < Settings.AssemblyMinPrice) result = Settings.AssemblyMinPrice;
+            if (assemblyResult < Settings.AssemblyMinPrice) assemblyResult = Settings.AssemblyMinPrice;
 
-            return result;
+            return (assemblyResult, remoteResult);
         }
     }
 }

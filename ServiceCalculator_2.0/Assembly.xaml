@@ -13,63 +13,81 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <TextBox 
-            x:Name="GoodsCostText" 
-            Grid.Column="0" Grid.Row="0"
+            x:Name="GoodsCostText"
             PlaceholderText="Стоимость собираемых товаров" 
-            HorizontalAlignment="Left" 
-            Margin="10" 
+            HorizontalAlignment="Center" 
             TextWrapping="Wrap"  
-            VerticalAlignment="Top" 
+            VerticalAlignment="Center" 
             Height="40" Width="250" 
             TextChanged="GoodsCostText_TextChanged"/>
         <TextBox 
-            x:Name="DistanceText_Assembly" 
-            Grid.Column="0" Grid.Row="1"
+            x:Name="DistanceText_Assembly" Grid.Row="1"
             PlaceholderText="Удаленность, км" 
-            HorizontalAlignment="Left" 
-            Margin="10" 
+            HorizontalAlignment="Center" 
             TextWrapping="Wrap"  
-            VerticalAlignment="Top" 
+            VerticalAlignment="Center" 
             Height="40" Width="250" 
             TextChanged="DistanceText_Assembly_TextChanged"/>
         <TextBox 
             x:Name="ResultText_Assembly" 
-            Grid.Column="1" Grid.Row="2"
+            Grid.Column="2"
             PlaceholderText="Не все верно заполнено" 
             HorizontalAlignment="Right" 
-            Margin="10" 
             TextWrapping="Wrap"  
-            VerticalAlignment="Top"
+            VerticalAlignment="Center"
+            Margin="10"
+            Width="200" Height="40"/>
+        <TextBox 
+            x:Name="ResultText_Remote" 
+            Grid.Column="2" Grid.Row="1"
+            PlaceholderText="Не все верно заполнено" 
+            HorizontalAlignment="Right" 
+            Margin="10"
+            TextWrapping="Wrap"  
+            VerticalAlignment="Center"
             Width="200" Height="40"/>
         <TextBlock 
-            Grid.Column="0" Grid.Row="2"
-            HorizontalAlignment="Left" 
-            Margin="10" 
+            Grid.Column="1" Grid.Row="0"
+            HorizontalAlignment="Right" 
+            Margin="10,10,0,0" 
             TextWrapping="Wrap" 
             Text="Стоимость сборки" 
             VerticalAlignment="Top" 
             Width="Auto" Height="Auto" 
             TextAlignment="Left"/>
         <TextBlock 
-            Grid.Column="1" Grid.Row="1" 
-            HorizontalAlignment="Left" 
+            Grid.Column="1" Grid.Row="1"
+            HorizontalAlignment="Right" 
             Margin="10,10,0,0" 
             TextWrapping="Wrap" 
-            Height="Auto"
-            Text="Корпусная мебель - 14 % от стоимости собираемых товаров. Если адрес находится не в пределах КАД, то добавляется плата за расстояние от КАД до адреса. Минимальная стоимость 4000 руб" 
-            VerticalAlignment="Top"/>
+            Text="Доплата за дальность" 
+            VerticalAlignment="Top" 
+            Width="Auto" Height="Auto" 
+            TextAlignment="Left"/>
+        <RichTextBlock 
+            HorizontalAlignment="Left"
+            Grid.Column="1" Grid.Row="3"
+            Height="Auto" 
+            Margin="10,0,0,0" 
+            VerticalAlignment="Center">
+            <Paragraph>
+                <Run FontSize="10" Text="Корпусная мебель - 12 % от стоимости собираемых товаров. Если адрес находится не в пределах КАД, то добавляется плата за расстояние от КАД до адреса. Минимальная стоимость 4000 руб"/>
+            </Paragraph>
+        </RichTextBlock>
         <TextBlock 
             x:Name="AlertText" 
             Grid.Column="0" Grid.Row="3"
             HorizontalAlignment="Left" 
-            Margin="10" 
+            Margin="10,10,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
             Width="Auto"/>

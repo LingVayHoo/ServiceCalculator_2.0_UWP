@@ -24,6 +24,7 @@ namespace ServiceCalculator_2._0.Code
         private float _assemblyMinPrice;
         private bool _isSmallType;
         private float _assemblyKmPrice;
+        private float _appVersion;
 
 
 
@@ -102,5 +103,6 @@ namespace ServiceCalculator_2._0.Code
         public float AssemblyKitchenPercent { get => _assemblyKitchenPercent; set => _assemblyKitchenPercent = value; }
         public float AssemblyMinPrice { get => _assemblyMinPrice; set => _assemblyMinPrice = value; }
         public float AssemblyKmPrice { get => _assemblyKmPrice; set => _assemblyKmPrice = value; }
+        public float AppVersion { get => _appVersion; set => _appVersion = value; }
     }
 }
